@@ -11,7 +11,7 @@ use Tests\TestCase;
 class BinaryCalculatorCommandTest extends TestCase
 {
     /** @test Vérifie une opération AND complète via l’interface CLI */
-    public function test_command_execution_with_and_operation()
+    public function test_command_execution_with_and_operation(): void
     {
         $this->artisan('binary:calc')
             ->expectsQuestion('>>', 'and 1101 1011')
@@ -22,7 +22,7 @@ class BinaryCalculatorCommandTest extends TestCase
     }
 
     /** @test Vérifie la détection d’une entrée invalide non binaire */
-    public function test_command_with_invalid_binary()
+    public function test_command_with_invalid_binary(): void
     {
         $this->artisan('binary:calc')
             ->expectsQuestion('>>', 'and 1101 10a1')
@@ -32,7 +32,7 @@ class BinaryCalculatorCommandTest extends TestCase
     }
 
     /** @test Vérifie la détection de chaînes binaires de longueurs différentes */
-    public function test_command_with_mismatched_length()
+    public function test_command_with_mismatched_length(): void
     {
         $this->artisan('binary:calc')
             ->expectsQuestion('>>', 'xor 101 1111')

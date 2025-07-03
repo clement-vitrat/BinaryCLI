@@ -13,11 +13,15 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "friendsofphp/php-cs-fixer": "^3.76",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
+        "phpmd/phpmd": "^2.15",
+        "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^10.5",
+        "sebastian/phpcpd": "^2.0",
         "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {

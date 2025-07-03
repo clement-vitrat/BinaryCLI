@@ -18,28 +18,28 @@ class BinaryCalculator extends Command
     /**
      * Signature de la commande artisan à utiliser dans le terminal.
      * Exemple d'appel : php artisan binary:calc
-     * 
+     *
      * @var string
      */
     protected $signature = 'binary:calc';
 
     /**
      * Courte description de la commande, affichée dans "php artisan list".
-     * 
+     *
      * @var string
      */
     protected $description = 'Calculatrice binaire en ligne de commande';
 
     /**
      * Service pour effectuer les opérations binaires.
-     * 
+     *
      * @var BinaryOperations
      */
     private BinaryOperations $operations;
 
     /**
      * Validateur de chaînes binaires (pour s'assurer que les entrées ne contiennent que des 0 et 1).
-     * 
+     *
      * @var BinaryValidator
      */
     private BinaryValidator $validator;
@@ -61,7 +61,7 @@ class BinaryCalculator extends Command
     /**
      * Point d'entrée principal de la commande.
      * Gère l'interface interactive en CLI pour effectuer les calculs binaires.
-     * 
+     *
      * @return int
      */
     public function handle()
@@ -108,7 +108,7 @@ class BinaryCalculator extends Command
             /**
              * Cas 1 : opérations binaires simples à 2 opérandes (and, or, xor, mul, div)
              */
-            if (in_array($op, ['and', 'or', 'xor', 'mul', 'div']) && count($parts) === 3) {
+            if (in_array($op, ['and', 'or', 'xor', 'mul', 'div'], true) && count($parts) === 3) {
                 [$op, $a, $b] = $parts;
 
                 // Validation des binaires
@@ -118,7 +118,7 @@ class BinaryCalculator extends Command
                 }
 
                 // Longueur égale pour les opérations bit à bit
-                if (in_array($op, ['and', 'or', 'xor']) && strlen($a) !== strlen($b)) {
+                if (in_array($op, ['and', 'or', 'xor'], true) && strlen($a) !== strlen($b)) {
                     $this->error('Les deux binaires doivent avoir la même longueur');
                     continue;
                 }
@@ -184,7 +184,7 @@ class BinaryCalculator extends Command
 
     /**
      * Affiche le message d’aide (liste des commandes).
-     * 
+     *
      * @return void
      */
     private function showHelp()

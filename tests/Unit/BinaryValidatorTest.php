@@ -23,14 +23,14 @@ class BinaryValidatorTest extends TestCase
     }
 
     /** @test Vérifie qu'une chaîne binaire valide est reconnue comme telle */
-    public function test_valid_binary()
+    public function test_valid_binary(): void
     {
         $this->assertTrue($this->validator->isValidBinary('10101'));
         $this->assertTrue($this->validator->isValidBinary('000'));
     }
 
     /** @test Vérifie qu'une chaîne non binaire est rejetée */
-    public function test_invalid_binary()
+    public function test_invalid_binary(): void
     {
         $this->assertFalse($this->validator->isValidBinary('10201'));
         $this->assertFalse($this->validator->isValidBinary('abc'));
